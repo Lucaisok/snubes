@@ -1,8 +1,9 @@
-import { useState, FC } from "react";
+import { useState, FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateProfile } from "./slices/profile";
 import { TStore } from "./store";
 import { validateEmail, validateCompany } from "./utils/validators";
+import secret from "./secrets.json";
 
 const Form: FC = () => {
     const [comp, setComp] = useState("");
@@ -11,6 +12,8 @@ const Form: FC = () => {
     const [ema, setEma] = useState("");
     const [visible, setVisible] = useState(true);
     const [error, setError] = useState(false);
+    const [isd, setIsd] = useState();
+
     const dispatch = useDispatch();
     const { email, company, name, phone } = useSelector(
         (state: TStore) => state.profileReducer
@@ -52,12 +55,27 @@ const Form: FC = () => {
         }
     };
 
+    useEffect(() => {
+        const localize = async () => {
+            const response = await fetch(
+                `https://geolocation-db.com/json/${secret}`
+            );
+            const data = await response.json();
+            const ip = data.IPv4;
+            const res = await fetch(`https://ipapi.co/${ip}/json/`);
+            const dat = await res.json();
+            setIsd(dat.country_calling_code);
+        };
+        localize();
+    }, []);
+
     return (
         <div>
             {visible && (
                 <div>
                     <input
                         type="text"
+                        name="company"
                         placeholder="Company"
                         required
                         maxLength={80}
@@ -66,6 +84,7 @@ const Form: FC = () => {
                     />
                     <input
                         type="text"
+                        name="name"
                         placeholder="Name"
                         required
                         maxLength={50}
@@ -73,12 +92,14 @@ const Form: FC = () => {
                     />
                     <input
                         type="number"
-                        placeholder="Phone"
+                        name="phone"
+                        placeholder={isd}
                         required
                         onChange={(e) => handlePhone(e)}
                     />
                     <input
                         type="text"
+                        name="email"
                         placeholder="Email"
                         required
                         onChange={(e) => handleEmail(e)}
