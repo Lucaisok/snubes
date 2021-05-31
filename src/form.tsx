@@ -70,48 +70,75 @@ const Form: FC = () => {
     }, []);
 
     return (
-        <div>
+        <div className="form">
             {visible && (
-                <div>
-                    <input
-                        type="text"
-                        name="company"
-                        placeholder="Company"
-                        required
-                        maxLength={80}
-                        onKeyPress={(e) => validateCompany(e)}
-                        onChange={(e) => handleCompany(e)}
-                    />
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        required
-                        maxLength={50}
-                        onChange={(e) => handleName(e)}
-                    />
-                    <input
-                        type="number"
-                        name="phone"
-                        placeholder={isd}
-                        required
-                        onChange={(e) => handlePhone(e)}
-                    />
-                    <input
-                        type="text"
-                        name="email"
-                        placeholder="Email"
-                        required
-                        onChange={(e) => handleEmail(e)}
-                    />
-                    <button onClick={handleProfileChange}>Get informed</button>
+                <div className="inputsContainer">
+                    <div className="inputsContainerTitleContainer">
+                        <div className="inputsContainerTitle">
+                            Find inbound call centers for your company
+                        </div>
+                    </div>
+                    <div className="subtitleContainer">
+                        <div className="subtitle">
+                            Use our AI and Big Data driven call center sourcing
+                            solution
+                        </div>
+                    </div>
+                    <div className="labelAndField">
+                        <label htmlFor="company">Company</label>
+                        <input
+                            type="text"
+                            name="company"
+                            placeholder="Company"
+                            required
+                            maxLength={80}
+                            onKeyPress={(e) => validateCompany(e)}
+                            onChange={(e) => handleCompany(e)}
+                        />
+                    </div>
+                    <div className="labelAndField">
+                        <label htmlFor="name">Name</label>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            required
+                            maxLength={50}
+                            onChange={(e) => handleName(e)}
+                        />
+                    </div>
+                    <div className="labelAndField">
+                        <label htmlFor="phone">Phone</label>
+                        <input
+                            type="number"
+                            name="phone"
+                            placeholder={isd}
+                            required
+                            onChange={(e) => handlePhone(e)}
+                        />
+                    </div>
+                    <div className="labelAndField">
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="text"
+                            name="email"
+                            placeholder="Email"
+                            required
+                            onChange={(e) => handleEmail(e)}
+                        />
+                    </div>
+                    <button className="button" onClick={handleProfileChange}>
+                        Get informed
+                    </button>
                 </div>
             )}
             {!visible && (
                 <div>
                     <h2>Company: {company}</h2>
                     <h2>Name: {name}</h2>
-                    <h2>Phone: {phone}</h2>
+                    <h2>
+                        Phone: {isd} {phone}
+                    </h2>
                     <h2>Email: {email}</h2>
                 </div>
             )}

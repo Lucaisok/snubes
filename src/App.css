@@ -1,1 +1,543 @@
+body {
+    margin: 0;
+    width: 100%;
+    max-width: 100vw;
+    /* background-color: seagreen; */
+}
 
+.App {
+    width: 100%;
+    max-width: 100vw;
+    /* background-color: sandybrown; */
+}
+
+.header {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 11.1%;
+    padding-right: 11.1%;
+    margin-bottom: 0px;
+}
+
+.logoContainer {
+    width: 162px;
+    height: 36px;
+    background-image: url("./images/snubes-logo.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.navbarContainer {
+    width: 56%;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #7f7f7f;
+}
+
+.arrow {
+    background-image: url("./images/arrow.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 13px;
+    height: 9px;
+    margin-left: 5px;
+}
+
+.hamburgerContainer {
+    display: none;
+}
+
+.desktopTopContainer {
+    width: 100%;
+    height: 506px;
+    background-image: url("./images/top.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 0px;
+}
+
+.topOverlay {
+    width: 100%;
+    height: 100%;
+    background-image: url("./images/rectangle.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    width: 30%;
+    height: 91%;
+    background-color: white;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputsContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.inputsContainerTitleContainer {
+    width: 90%;
+    height: 38px;
+    box-sizing: border-box;
+    text-align: center;
+    display: table;
+    margin-bottom: 10px;
+}
+
+.inputsContainerTitle {
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #445566;
+}
+
+.subtitleContainer {
+    width: 76%;
+    height: 28px;
+    box-sizing: border-box;
+    text-align: center;
+    display: table;
+    margin-top: -25px;
+}
+
+.subtitle {
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #445566;
+}
+
+.labelAndField {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 25%;
+    /* margin-bottom: 10px; */
+}
+
+.labelAndField label {
+    margin-right: 15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    color: #445566;
+}
+
+.labelAndField input {
+    width: 58.6%;
+    height: 48px;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: solid 1px #aabbcc;
+}
+
+.labelAndField input:focus {
+    outline: none !important;
+    border: solid 1px #0099ee;
+}
+
+.labelAndField input::placeholder {
+    font-family: "Roboto", sans-serif;
+    color: #aabbcc;
+    font-size: 16px;
+}
+
+.button {
+    width: 40.6%;
+    height: 48px;
+    background-color: #0099ee;
+    color: white;
+    border-radius: 4px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.statsContainer {
+    width: 33%;
+    height: 91%;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.welcome {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 46px;
+}
+
+.number {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.letters {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    color: white;
+    margin-top: 0px;
+}
+/* MEDIA Q */
+@media (max-width: 1900px) {
+    .inputsContainerTitle {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 1800px) {
+    .inputsContainerTitle {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 1700px) {
+    .inputsContainerTitle {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .navbarContainer {
+        width: 65%;
+    }
+
+    .inputsContainerTitle {
+        font-size: 18px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .labelAndField {
+        padding-right: 17%;
+    }
+
+    .labelAndField input {
+        width: 62.6%;
+        height: 42px;
+    }
+
+    .labelAndField label {
+        font-size: 15px;
+    }
+
+    .labelAndField input::placeholder {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .inputsContainerTitle {
+        font-size: 17px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .labelAndField label {
+        font-size: 13px;
+    }
+
+    .labelAndField input::placeholder {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbarContainer {
+        width: 70%;
+    }
+
+    .inputsContainerTitle {
+        font-size: 16px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .labelAndField label {
+        font-size: 11px;
+    }
+
+    .labelAndField input::placeholder {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .navbarContainer {
+        width: 65%;
+    }
+
+    .inputsContainerTitle {
+        font-size: 15px;
+    }
+
+    .header {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .labelAndField label {
+        font-size: 10px;
+    }
+
+    .labelAndField input::placeholder {
+        font-size: 8px;
+    }
+}
+/* TABLET */
+@media (max-width: 900px) {
+    .header {
+        height: 50px;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .navbarContainer {
+        display: none;
+    }
+
+    .logoContainer {
+        background-image: url("./images/nocloud.svg");
+        width: 103px;
+        height: 25px;
+    }
+
+    .hamburgerContainer {
+        display: inline-block;
+        width: 28px;
+        height: 21px;
+        background-image: url("./images/hamburger.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .inputsContainerTitleContainer {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    .inputsContainerTitle {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .subtitleContainer {
+        margin-bottom: 30px;
+    }
+
+    .labelAndField {
+        margin-bottom: 15px;
+        padding-right: 29%;
+    }
+
+    .labelAndField label {
+        font-size: 18px;
+    }
+
+    .labelAndField input {
+        height: 48px;
+        width: 55%;
+    }
+
+    .labelAndField input::placeholder {
+        font-size: 18px;
+    }
+
+    .button {
+        width: 25.6%;
+        margin-top: 15px;
+    }
+
+    .desktopTopContainer {
+        margin-top: 40px;
+        height: 200px;
+    }
+
+    .topOverlay {
+        background-image: url("./images/rectangle.svg");
+    }
+
+    .statsContainer {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .welcome {
+        margin-bottom: 20px;
+    }
+
+    .horizontal {
+        justify-content: center;
+    }
+
+    .vertical {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .inputsContainerTitle {
+        font-size: 25px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+    .header {
+        padding-left: 4.7%;
+        padding-right: 4.7%;
+        border-bottom: 1px solid #aabbcc;
+    }
+
+    .inputsContainerTitle {
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .subtitleContainer {
+        display: none;
+    }
+
+    .labelAndField {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 2%;
+    }
+
+    .labelAndField label {
+        font-size: 16px;
+        color: #445566;
+        margin-bottom: 10px;
+    }
+
+    .labelAndField input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .button {
+        width: 80%;
+    }
+
+    .desktopTopContainer {
+        height: 295px;
+    }
+
+    .horizontal {
+        width: 64%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .vertical {
+        width: 55%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .labelAndField {
+        padding-right: 3.5%;
+    }
+}
