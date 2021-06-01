@@ -133,13 +133,35 @@ const Form: FC = () => {
                 </div>
             )}
             {!visible && (
-                <div>
-                    <h2>Company: {company}</h2>
-                    <h2>Name: {name}</h2>
-                    <h2>
-                        Phone: {isd} {phone}
-                    </h2>
-                    <h2>Email: {email}</h2>
+                <div className="inputsContainer">
+                    <div className="inputsContainerTitleContainer">
+                        <div className="inputsContainerTitle thank">
+                            Thank you for your request!
+                        </div>
+                    </div>
+                    <div className="subtitleAlternative">
+                        <div className="subtitle">
+                            You’ve taken the first step. Our experts will get in
+                            touch with you soon.
+                        </div>
+                    </div>
+                    <div className="line"></div>
+                    <div className="generalContainer">
+                        <div className="insideContainer">
+                            <p className="reference">Company</p>
+                            <p className="reference">Name</p>
+                            <p className="reference">Phone</p>
+                            <p className="reference">Email</p>
+                        </div>
+                        <div className="insideContainer">
+                            <p className="data">{company}</p>
+                            <p className="data">{name}</p>
+                            <p className="data">
+                                {isd} {phone}
+                            </p>
+                            <p className="data">{email}</p>
+                        </div>
+                    </div>
                 </div>
             )}
             {error && <p>Email not valid</p>}
