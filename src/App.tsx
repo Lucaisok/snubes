@@ -7,6 +7,8 @@ import { TopContainerTablet } from "./topContainerTablet";
 import { TopContainerMobile } from "./topContainerMobile";
 import { IconsSection } from "./iconsSection";
 import { ClientsContainer } from "./clientsContainer";
+import { Footer } from "./footer";
+import { SubFooter } from "./subFooter";
 
 function App() {
     const [windowSize, setWindowSize] = useState(window.innerWidth);
@@ -41,33 +43,8 @@ function App() {
             <IconsSection />
             <div className="whyContainer"></div>
             <ClientsContainer />
-            <div className="footer">
-                <div className="graySquare"></div>
-                <div className="column">
-                    <p className="index">About us</p>
-                    <p className="index">Become a Partner</p>
-                    <p className="index">FAQ</p>
-                </div>
-                <div className="column">
-                    <p className="index">Imprint</p>
-                    <p className="index">Terms &#38; Conditions</p>
-                    <p className="index">Privacy Policy</p>
-                </div>
-                <div className="column">
-                    <p className="index">support@snubes.com</p>
-                    <p className="index">+49 (0) 305 5645327</p>
-                    <div className="row">
-                        <div className="fb"></div>
-                        <div className="twitter"></div>
-                        <div className="linkedin"></div>
-                    </div>
-                </div>
-            </div>
-            <div className="subFooter">
-                <div className="reserved">
-                    © 2019 Snubes GmbH All Rights Reserved.
-                </div>
-            </div>
+            <Footer />
+            <SubFooter />
         </div>
     );
 }

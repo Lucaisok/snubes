@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateProfile } from "./slices/profile";
 import { TStore } from "./store";
 import { validateEmail, validateCompany } from "./utils/validators";
-import secret from "./secrets.json";
 
 const Form: FC = () => {
     const [comp, setComp] = useState("");
@@ -58,7 +57,7 @@ const Form: FC = () => {
     useEffect(() => {
         const localize = async () => {
             const response = await fetch(
-                `https://geolocation-db.com/json/${secret}`
+                `https://geolocation-db.com/json/e4f42070-ad2d-11eb-adf1-cf51da9b3410`
             );
             const data = await response.json();
             const ip = data.IPv4;
@@ -117,6 +116,7 @@ const Form: FC = () => {
                             onChange={(e) => handlePhone(e)}
                         />
                     </div>
+                    {error && <p>Email not valid</p>}
                     <div className="labelAndField">
                         <label htmlFor="email">Email</label>
                         <input
@@ -164,7 +164,6 @@ const Form: FC = () => {
                     </div>
                 </div>
             )}
-            {error && <p>Email not valid</p>}
         </div>
     );
 };
