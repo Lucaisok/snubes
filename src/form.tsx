@@ -12,6 +12,7 @@ const Form: FC = () => {
     const [visible, setVisible] = useState(true);
     const [error, setError] = useState(false);
     const [isd, setIsd] = useState();
+    const [empty, setEmpty] = useState(false);
 
     const dispatch = useDispatch();
     const { email, company, name, phone } = useSelector(
@@ -36,21 +37,30 @@ const Form: FC = () => {
 
     const handleProfileChange = () => {
         const valid = validateEmail(ema);
-        if (valid) {
-            dispatch(
-                updateProfile({
-                    company: comp,
-                    name: nam,
-                    phone: phon,
-                    email: ema,
-                })
-            );
-            setVisible(false);
-            if (error) {
-                setError(false);
+        if (
+            ema.length !== 0 &&
+            comp.length !== 0 &&
+            nam.length !== 0 &&
+            phon.length !== 0
+        ) {
+            if (valid) {
+                dispatch(
+                    updateProfile({
+                        company: comp,
+                        name: nam,
+                        phone: phon,
+                        email: ema,
+                    })
+                );
+                setVisible(false);
+                if (error) {
+                    setError(false);
+                }
+            } else {
+                setError(true);
             }
         } else {
-            setError(true);
+            setEmpty(true);
         }
     };
 
@@ -83,9 +93,11 @@ const Form: FC = () => {
                             solution
                         </div>
                     </div>
+
                     <div className="labelAndField">
                         <label htmlFor="company">Company</label>
                         <input
+                            className={empty ? "red" : undefined}
                             type="text"
                             name="company"
                             placeholder="Company"
@@ -98,6 +110,7 @@ const Form: FC = () => {
                     <div className="labelAndField">
                         <label htmlFor="name">Name</label>
                         <input
+                            className={empty ? "red" : undefined}
                             type="text"
                             name="name"
                             placeholder="Name"
@@ -109,6 +122,7 @@ const Form: FC = () => {
                     <div className="labelAndField">
                         <label htmlFor="phone">Phone</label>
                         <input
+                            className={empty ? "red" : undefined}
                             type="number"
                             name="phone"
                             placeholder={isd}
@@ -120,6 +134,7 @@ const Form: FC = () => {
                     <div className="labelAndField">
                         <label htmlFor="email">Email</label>
                         <input
+                            className={empty ? "red" : undefined}
                             type="text"
                             name="email"
                             placeholder="Email"

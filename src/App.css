@@ -199,6 +199,10 @@ li {
     color: #445566;
 }
 
+.red {
+    border: 1px solid red !important;
+}
+
 .labelAndField input:focus {
     outline: none !important;
     border: solid 1px #0099ee;
