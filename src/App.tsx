@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { throttle } from "./utils/throttle";
-import { Header } from "./header";
-import { TopContainerDesktop } from "./topContainerDesktop";
-import { TopContainerTablet } from "./topContainerTablet";
-import { TopContainerMobile } from "./topContainerMobile";
-import { IconsSection } from "./iconsSection";
-import { ClientsContainer } from "./clientsContainer";
-import { Footer } from "./footer";
-import { SubFooter } from "./subFooter";
+import { Header } from "./components/header";
+import { TopContainerDesktop } from "./components/topContainerDesktop";
+import { TopContainerTablet } from "./components/topContainerTablet";
+import { TopContainerMobile } from "./components/topContainerMobile";
+import { IconsSection } from "./components/iconsSection";
+import { ClientsContainer } from "./components/clientsContainer";
+import { Footer } from "./components/footer";
+import { SubFooter } from "./components/subFooter";
 
 function App() {
     const [windowSize, setWindowSize] = useState(window.innerWidth);

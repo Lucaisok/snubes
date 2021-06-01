@@ -1,8 +1,8 @@
 import { useState, FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateProfile } from "./slices/profile";
-import { TStore } from "./store";
-import { validateEmail, validateCompany } from "./utils/validators";
+import { updateProfile } from "../slices/profile";
+import { TStore } from "../store";
+import { validateEmail, validateCompany } from "../utils/validators";
 
 const Form: FC = () => {
     const [comp, setComp] = useState("");
