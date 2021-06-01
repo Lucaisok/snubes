@@ -16,14 +16,6 @@ function App() {
     const resizer = () => {
         window.addEventListener("resize", () => {
             setWindowSize(window.innerWidth);
-            console.log(windowSize);
-            if (windowSize < 900 && windowSize > 576) {
-                console.log("is Tablet");
-            } else if (windowSize < 576) {
-                console.log("is Mobile");
-            } else {
-                console.log("is Desktop");
-            }
         });
     };
 
